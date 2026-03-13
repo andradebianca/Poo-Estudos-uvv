@@ -7,8 +7,8 @@ Programação Orientada a Objetos (POO)
 
 ## 📂 Estrutura do Repositório
 ```
-poo/
-├── Sistema Bancário
+.com.bianca.poo/
+├── BancoSistema
           ├── 1POO/        # Introdução ao encapsulamento. (Construtor vazio, acessores de acesso, instanciamento de objeto).
           ├── 2POO/        # encapsulamento. (Construtor com parâmetros, this., Getters e Setters.
           ├── 3POO/        # 
