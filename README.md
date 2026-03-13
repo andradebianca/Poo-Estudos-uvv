@@ -8,15 +8,14 @@ Programação Orientada a Objetos (POO)
 ## 📂 Estrutura do Repositório
 ```
 poo/
-│
-├── anotacoes/        # Resumos e anotações das aulas
-├── exercicios/       # Exercícios resolvidos
-├── tarefas/          # Atividades e trabalhos da disciplina
-└── projetos/         # Projetos desenvolvidos durante o curso
+├── Sistema Bancário
+          ├── 1POO/        # Introdução ao encapsulamento. (Construtor vazio, acessores de acesso, instanciamento de objeto).
+          ├── 2POO/        # encapsulamento. (Construtor com parâmetros, this., Getters e Setters.
+          ├── 3POO/        # 
+          └── 4POO/        # 
 ```
 
 ## 🧠 Conteúdos Estudados
-
 * Conceitos de Programação Orientada a Objetos
 * Classes e Objetos
 * Encapsulamento
@@ -25,13 +24,8 @@ poo/
 * Abstração
 
 ## 🛠️ Tecnologias Utilizadas
-
 * Linguagem: Java
 * IDE: NetBeans
-
-## 📌 Objetivo
-
-Organizar e registrar o aprendizado ao longo da disciplina, facilitando revisões futuras e servindo como portfólio acadêmico.
 
 ---
 
