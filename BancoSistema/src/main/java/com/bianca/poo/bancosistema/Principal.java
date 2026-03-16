@@ -4,7 +4,6 @@ import javax.swing.JOptionPane;
 
 
 public class Principal {
-
     public static void main(String[] args) {
 
         Conta[] conta = new Conta[3];
@@ -28,4 +27,3 @@ public class Principal {
         }
 
     }
-}
