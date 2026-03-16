@@ -1,17 +1,25 @@
 package com.bianca.poo.bancosistema;
-
+import java.util.Scanner;
+// Importa a classe Scanner do pacote java.util para leitura de dados do usuário.
+// Java.util.* -> Ao colocar o asterisco, diz que se pode utilizar tudo que esteja no pacote util.
+// Indicado quando se utilizará várias classes de um mesmo pacote.
+// Mas por que não colocar * em tudo? Vai afetar diretamente o desempenho, pois ao importar muitas coisas terá problemas com eficiência.
 
 public class Principal {
-
     public static void main(String[] args) {
 
-
-    Conta c1 = new Conta(11, 202, 30);
-    Conta c2 = new Conta(22, 202, 0);
-    
-    c2.creditar(500);
-    c2.transferir(c1, 100);
-    
-        System.out.println(c1.imprimir() + "\n---------\n" + c2.imprimir());
+        Scanner teclado = new Scanner(System.in);
+        
+        System.out.println("Conta 1: Agência: ");
+        int agencia = teclado.nextInt();
+        //O next é utilizado para leitura de teclado. Caso eu quisesse receber uma variável de outro tipo, escreveria nextDouble, nextFloat, ...
+        System.out.println("conta 1: Nº da Conta: ");
+        int numero = teclado.nextInt();
+        System.out.println("Conta 1: Saldo Inicial: ");
+        double saldo = teclado.nextDouble();
+        
+        Conta c1 = new Conta(agencia, numero, saldo);
+        
+        System.out.println(c1.imprimir());
+}       
     }
-}
