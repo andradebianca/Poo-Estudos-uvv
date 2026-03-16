@@ -1,13 +1,12 @@
 package com.bianca.poo.bancosistema;
 
-
 public class Conta {
+
     private int agencia, numero;
     private double saldo, limite;
-    
-    
-    public Conta(){
-     
+
+    public Conta() {
+
     }
 
 // Construtor que recebe os parâmetros para inicializar os atributos da conta.
@@ -16,8 +15,8 @@ public class Conta {
         this.agencia = agencia;
         this.numero = numero;
         this.saldo = saldo;
-        this.limite = 50; 
- // Toda conta criada terá um limite extra de 50 reais além do valor na conta inalteravel.
+        this.limite = 50;
+        // Toda conta criada terá um limite extra de 50 reais além do valor na conta inalteravel.
 // atributo da classe (this.agencia) = valor recebido no parâmetro (agencia)
     }
 
@@ -40,6 +39,7 @@ public class Conta {
         this.numero = numero;
     }
 // Não será criado o setSaldo, porque o saldo deve mudar apenas pelos métodos do banco, como: transferir, debitar e creditar.
+
     public double getSaldo() {
         return saldo;
     }
@@ -48,41 +48,38 @@ public class Conta {
     public double getLimite() {
         return limite;
     }
-    
-    
-
 
 // ------------ Métodos >
-    public double saldoDisponivel(){
+    public double saldoDisponivel() {
         return saldo + limite;
     }
-   
-    public void creditar(double valor){ 
-    saldo += valor;
+
+    public void creditar(double valor) {
+        saldo += valor;
     }
-        
-    public boolean debitar(double valor){
-        if(valor <= saldoDisponivel()){
+
+    public boolean debitar(double valor) {
+        if (valor <= saldoDisponivel()) {
             saldo -= valor;
             return true;
-        } else{
+        } else {
             System.out.println("Saldo Insuficiente.");
             return false;
         }
     }
 
-    public boolean transferir(Conta destino, double valor){
+    public boolean transferir(Conta destino, double valor) {
 // Checagem para saber se há saldo disponpivel na conta para fazer a transferência.
-        if (debitar(valor) == true){
+        if (debitar(valor) == true) {
             destino.creditar(valor);
             return true;
-        } else{
+        } else {
             System.out.println("Impossível concluir transação.");
             return false;
         }
     }
-    
-    public String imprimir (){
+
+    public String imprimir() {
         return "Agência: " + getAgencia() + "\nNúmero: " + getNumero() + "\nSaldo: " + getSaldo() + "\nLimite: " + getLimite() + "\nSaldo disponível: " + saldoDisponivel();
     }
 }
