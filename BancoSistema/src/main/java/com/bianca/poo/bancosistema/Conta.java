@@ -69,8 +69,12 @@ public class Conta {
     }
 
     public boolean transferir(Conta destino, double valor) {
+<<<<<<< Updated upstream
 // Checagem para saber se há saldo disponpivel na conta para fazer a transferência.
         if (debitar(valor) == true) {
+=======
+        if (this.debitar(valor)) { 
+>>>>>>> Stashed changes
             destino.creditar(valor);
             return true;
         } else {
