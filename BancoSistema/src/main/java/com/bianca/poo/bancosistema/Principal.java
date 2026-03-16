@@ -1,25 +1,29 @@
 package com.bianca.poo.bancosistema;
-import java.util.Scanner;
-// Importa a classe Scanner do pacote java.util para leitura de dados do usuário.
-// Java.util.* -> Ao colocar o asterisco, diz que se pode utilizar tudo que esteja no pacote util.
-// Indicado quando se utilizará várias classes de um mesmo pacote.
-// Mas por que não colocar * em tudo? Vai afetar diretamente o desempenho, pois ao importar muitas coisas terá problemas com eficiência.
+import javax.swing.JOptionPane;
+// Biblioteca de telas gráficas. Tendo duas mensagerias: apresentação e capturação de digitação de usuários.
+
 
 public class Principal {
     public static void main(String[] args) {
 
-        Scanner teclado = new Scanner(System.in);
-        
-        System.out.println("Conta 1: Agência: ");
-        int agencia = teclado.nextInt();
-        //O next é utilizado para leitura de teclado. Caso eu quisesse receber uma variável de outro tipo, escreveria nextDouble, nextFloat, ...
-        System.out.println("conta 1: Nº da Conta: ");
-        int numero = teclado.nextInt();
-        System.out.println("Conta 1: Saldo Inicial: ");
-        double saldo = teclado.nextDouble();
-        
-        Conta c1 = new Conta(agencia, numero, saldo);
-        
-        System.out.println(c1.imprimir());
-}       
+        Conta[] conta = new Conta[3];
+// Cria um vetor (array) chamado conta com 3 posições para armazenar objetos da classe Conta.
+
+        for (int x = 1; x < 4; x++) // Estrutura de repetição que executa 3 vezes para cadastrar as contas.
+        // A variável x controla o número da conta que está sendo cadastrada.
+        {
+            int agencia = Integer.parseInt(JOptionPane.showInputDialog("Agência da conta (" + x + "): "));
+// Exibe uma caixa de diálogo pedindo a agência da conta.
+// JOptionPane.showInputDialog retorna uma String, então usamos Integer.parseInt para converter o valor digitado para inteiro.
+            int numero = Integer.parseInt(JOptionPane.showInputDialog("Número da conta (" + x + "): "));
+            double saldo = Double.parseDouble(JOptionPane.showInputDialog("Saldo inicial " + x + "): "));
+
+            conta[x] = new Conta(agencia, numero, saldo);
+// Cria um novo objeto da classe Conta usando o construtor e armazena esse objeto na posição x do vetor conta.
+
+            JOptionPane.showMessageDialog(null, conta[x].imprimir());
+// Exibe uma mensagem na tela mostrando as informações da conta
+
+        }
+
     }

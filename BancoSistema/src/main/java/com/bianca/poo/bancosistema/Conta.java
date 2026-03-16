@@ -59,7 +59,8 @@ public class Conta {
     }
 
     public boolean transferir(Conta destino, double valor) {
-        if (this.debitar(valor)) { ///Não é necessário colocar o == true, pois o parametro em POO roda toda a função e verificação de debitar.
+        if (this.debitar(valor)) {
+
             destino.creditar(valor);
             return true;
         } else {
